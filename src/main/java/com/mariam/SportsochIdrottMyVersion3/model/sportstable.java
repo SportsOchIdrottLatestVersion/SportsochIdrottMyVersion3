@@ -17,17 +17,18 @@ import javax.persistence.Table;
 public class sportstable {
 
   @Id
-  @GeneratedValue
+  @GeneratedValue(strategy = GenerationType.AUTO)
   @Column(name="sports_id")
   private Integer id;
+  
   @Column(name="sports_item")
   private String sportsItem;
 
     public sportstable() {
     }
 
-    public sportstable(Integer id, String sportsItem) {
-        this.id = id;
+    public sportstable( String sportsItem) {
+        
         this.sportsItem = sportsItem;
     }
 
@@ -47,8 +48,7 @@ public class sportstable {
     public void setSportsItem(String sportsItem) {
         this.sportsItem = sportsItem;
     }
-    
-    
+     
   
 }
 
